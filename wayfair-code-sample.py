@@ -12,55 +12,55 @@ that return specific elements based on user input and inheritance
 class WayfairLLC:  # Base company class that defines gobal elements
 
     def __init__(self):
-        self.Tagline = "Wayfair is one of the world's largest online destinations for the home"
-        self.Shipping = "free shipping for orders over $49"
+        self.tagline = "Wayfair is one of the world's largest online destinations for the home"
+        self.shipping = "free shipping for orders over $49"
 
 
 class Wayfair(WayfairLLC):  # Inherits global shipping and tagline from base company class
 
     # set the unique brand tagline
-    Brand_tagline = "Wayfair has everything home for every budget"
+    brand_tagline = "Wayfair has everything home for every budget"
 
     # set the unique brand URL
-    Brand_link = "https://www.wayfair.com"
+    brand_link = "https://www.wayfair.com"
 
 
 class JossMain(WayfairLLC):  # Inherits global shipping and tagline from base company class
 
     # set the unique brand tagline
-    Brand_tagline = "Joss & Main has affordable discoveries for gorgeous living"
+    brand_tagline = "Joss & Main has affordable discoveries for gorgeous living"
 
     # set the unique brand URL
-    Brand_link = "https://www.jossandmain.com"
+    brand_link = "https://www.jossandmain.com"
 
 
 class AllModern(WayfairLLC):  # Inherits global shipping and tagline from base company class
 
     # set the unique brand tagline
-    Brand_tagline = "All Modern offers unbelievable prices on everything modern"
+    brand_tagline = "All Modern offers unbelievable prices on everything modern"
 
     # set the unique brand URL
-    Brand_link = "https://www.allmodern.com"
+    brand_link = "https://www.allmodern.com"
 
 
 class BirchLane(WayfairLLC):  # Inherits global shipping and tagline from base company class
 
     # set the unique brand tagline
-    Brand_tagline = "Birch lane is the home of classic designs and fresh finds"
+    brand_tagline = "Birch lane is the home of classic designs and fresh finds"
 
     # set the unique brand URL
-    Brand_link = "https://www.birchlane.com"
+    brand_link = "https://www.birchlane.com"
 
 
 class Perigold(WayfairLLC):  # Inherits global shipping and tagline from base company class
 
     # set the unique brand taglinea
-    Brand_tagline = "Perigold offers the widest-ever selection of premium home"
+    brand_tagline = "Perigold offers the widest-ever selection of premium home"
 
     # FamilyBrand_Shipping = "Perigold offers " + self.shipping
 
     # set the unique brand URL
-    Brand_link = "https://www.perigold.com"
+    brand_link = "https://www.perigold.com"
 
 
 switcher = {
@@ -72,29 +72,29 @@ switcher = {
         }
 
 
-Choice = None
-while Choice is None:
-    User_input = int(input("Please choose from the following options for additional information on Wayfair brands \n 1. Wayfair \n 2. Joss & Main  \n 3. All Modern \n 4. Birch Lane \n 5. Perigold \n: "))
+choice = None
+while choice is None:
+    user_input = int(input("Please choose from the following options for additional information on Wayfair brands \n 1. Wayfair \n 2. Joss & Main  \n 3. All Modern \n 4. Birch Lane \n 5. Perigold \n: "))
     try:
         # try and convert the string input to a number, forces error checking and offers a check condition
-        Choice = int(User_input)
+        choice = int(user_input)
     except ValueError:
         # Provide the user with result of value check
-        print("{User_input} is not a number, please enter a number only".format(input=User_input))
+        print("{User_input} is not a number, please enter a number only".format(input=user_input))
 
 
-def numbers_to_choice(Argument):
+def numbers_to_choice(argument):
     # Pass user input into the dictonary and return the fuction name
-    Brand = switcher.get(Argument, "nothing")
-    Func = switcher.get(Argument, "nothing")
+    brand = switcher.get(argument, "nothing")
+    func = switcher.get(argument, "nothing")
 
     # return the requested brand as an excutable fuction
-    return Func()
+    return func()
 
 # Improve this by calling directly from user input
-User_result = numbers_to_choice(Choice)
+user_result = numbers_to_choice(choice)
 
-print(User_result.Tagline)
-print(User_result.Brand_tagline)
-print(User_result.Shipping)
-print(User_result.Brand_link)
+print(user_result.tagline)
+print(user_result.brand_tagline)
+print(user_result.shipping)
+print(user_result.brand_link)
