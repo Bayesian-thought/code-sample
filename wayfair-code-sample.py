@@ -1,5 +1,5 @@
 """
-Revision Date: 08/09/2018
+Revision Date: 08/10/2018
 Author: Bevan Glynn
 Language: Python 2.7
 Style: PEP8
@@ -91,7 +91,7 @@ def numbers_to_choice(Argument):
     # return the requested brand as an excutable fuction
     return Func()
 
-# Improve this by calling from user uinout
+# Improve this by calling directly from user input
 User_result = numbers_to_choice(Choice)
 
 print(User_result.Tagline)
