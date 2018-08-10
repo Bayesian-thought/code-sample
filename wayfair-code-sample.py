@@ -10,7 +10,8 @@ that return specific elements based on user input and inheritance
 
 
 def main():
-    switcher = {
+
+    brand_options = {
         1: Wayfair,
         2: JossMain,
         3: AllModern,
@@ -20,21 +21,20 @@ def main():
 
     choice = None
     while choice is None:
-        user_input = int(input("Please choose from the following options for additional information on Wayfair brands \n 1. Wayfair \n 2. Joss & Main  \n 3. All Modern \n 4. Birch Lane \n 5. Perigold \n: "))
+        user_input = raw_input("Please choose from the following options for additional information on Wayfair brands \n 1. Wayfair \n 2. Joss & Main  \n 3. All Modern \n 4. Birch Lane \n 5. Perigold \n: ")
         try:
             # try and convert the string input to a number, forces error checking and offers a check condition
-            choice = int(user_input)
+            choice_id = int(user_input)
+            choice = resolve_option_from_key(choice_id, brand_options)
         except ValueError:
             # Provide the user with result of value check
-            print("{User_input} is not a number, please enter a number only".format(input=user_input))
+            print("'{0}' is not a valid option, please choose an option from the list".format(user_input))
 
-    # Improve this by calling directly from user input
-    user_result = numbers_to_choice(choice, switcher)
+    print(choice.tagline)
+    print(choice.brand_tagline)
+    print(choice.shipping)
+    print(choice.brand_link)
 
-    print(user_result.tagline)
-    print(user_result.brand_tagline)
-    print(user_result.shipping)
-    print(user_result.brand_link)
 
 
 class WayfairLLC:  # Base company class that defines gobal elements
@@ -82,24 +82,25 @@ class BirchLane(WayfairLLC):  # Inherits global shipping and tagline from base c
 
 class Perigold(WayfairLLC):  # Inherits global shipping and tagline from base company class
 
-    # set the unique brand taglinea
+    # set the unique brand tagline
     brand_tagline = "Perigold offers the widest-ever selection of premium home"
-
-    # FamilyBrand_Shipping = "Perigold offers " + self.shipping
 
     # set the unique brand URL
     brand_link = "https://www.perigold.com"
 
 
-def numbers_to_choice(argument, switcher):
-    # Pass user input into the dictonary and return the fuction name
-    brand = switcher.get(argument, "nothing")
-    func = switcher.get(argument, "nothing")
+def resolve_option_from_key(option_key, options):
+    # provided a key, return the corresponding item or raise an error
 
-    # return the requested brand as an excutable fuction
-    return func()
+    option = options.get(option_key)
 
+    if option is None:
+        raise ValueError("Argument is invalid")
 
+    # return the requested object
+    return option()
+
+    
 if __name__ == '__main__':
     # Execute main method to trigger user input
     main()
