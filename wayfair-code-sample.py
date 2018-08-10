@@ -3,8 +3,8 @@ Revision Date: 08/09/2018
 Author: Bevan Glynn
 Language: Python 2.7
 Style: PEP8
-
-Overview: This code demonstrations the use of functions and class structure
+Repo: https://github.com/Bayesian-thought/code-sample
+Overview: This code demonstrations the use of functions and class structures
 that return specific elements based on user input and inheritance
 """
 
@@ -63,6 +63,15 @@ class Perigold(WayfairLLC):  # Inherits global shipping and tagline from base co
     Brand_link = "https://www.perigold.com"
 
 
+switcher = {
+        1: Wayfair,
+        2: JossMain,
+        3: AllModern,
+        4: BirchLane,
+        5: Perigold
+        }
+
+
 Choice = None
 while Choice is None:
     User_input = int(input("Please choose from the following options for additional information on Wayfair brands \n 1. Wayfair \n 2. Joss & Main  \n 3. All Modern \n 4. Birch Lane \n 5. Perigold \n: "))
@@ -71,15 +80,7 @@ while Choice is None:
         Choice = int(User_input)
     except ValueError:
         # Provide the user with result of value check
-        print("{user_input} is not a number, please enter a number only".format(input=User_value))
-
-switcher = {
-        1: Wayfair,
-        2: JossMain,
-        3: AllModern,
-        4: BirchLane,
-        5: Perigold
-        }
+        print("{User_input} is not a number, please enter a number only".format(input=User_input))
 
 
 def numbers_to_choice(Argument):
@@ -90,9 +91,8 @@ def numbers_to_choice(Argument):
     # return the requested brand as an excutable fuction
     return Func()
 
-
+# Improve this by calling from user uinout
 User_result = numbers_to_choice(Choice)
-
 
 print(User_result.Tagline)
 print(User_result.Brand_tagline)
