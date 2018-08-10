@@ -23,5 +23,5 @@ Please fork and submit pull request for branch.
 
 Credits: Bevan Glynn
 
-License:MIT © Bevan Glynn 
+License: MIT © Bevan Glynn 
 
