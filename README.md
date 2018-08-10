@@ -1,35 +1,27 @@
 # Objective 
-This script demonstrates objective use of class and functions in Python
-
-This script was provided and created in support of a sample request from a prospective employment oppertunity
+This script demonstrates objective the use of objective class strcutures and functions in Python. The program was created in support of a sample request from a prospective employment oppertunity
 
 
-Build status
 
-Build status of continus integration i.e. travis, appveyor etc. Ex. -
-
-
-Code style
-
-If you're using any code style like xo, standard etc. That will help others while contributing to your project. Ex. -
+Build status: Nothing fancy at this point 
 
 
-Screenshots
-
-Tech/framework used
-
-What makes your project stand out?
+Code style: PEP8 - https://www.python.org/dev/peps/pep-0008/
 
 
-How to use?
+How to use:
 
 Python wayfair-code-sample.py
 
+
+
+
 Contribute
+Please fork and submit pull request for branch. 
 
-Let people know how they can contribute into your project. A contributing guideline will be a big plus.
 
-Credits
 
+Credits: Bevan Glynn
 
 License:MIT © Bevan Glynn 
+
